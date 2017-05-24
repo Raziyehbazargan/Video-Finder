@@ -15,6 +15,8 @@ const SearchBar = () => {
 class SearchBar extends Component {
   render() {
     return <input onChange={this.onInputChange}/>;
+    // for one line code we can also use ES6 synatx:
+    //    return <input onChange={event => console.log(event.target.value)}/>;
   }
 
   onInputChange(event) {
