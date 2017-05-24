@@ -1,17 +1,21 @@
-//Create a new component. This component should produce soome HTML.
 import React from 'react';
-import ReactDOM from 'react-dom';
-
-import SearchBar from './components/search_bar';
-
-const API_KEY = process.env.API_KEY;
+import ReactDom from 'react-dom';
+// 1- Create a new component. This component should produce some HTML.
 const App = () => {
-  return (
-     <div>
-        <SearchBar />
-     </div>
-  );
+  return <div>Hi!</div>;
+  // <div>Hi!</div>: This is JSX, it's looks like HTMl but it's JavaScript
+  // the main reason of using JSX is to make our component cleaner
+  // for example this line in JSX is equal as below code in vanilla JavaScript
+  /*
+   return React.createElement(
+    "div",
+    "",
+    null
+  )
+  */
 }
 
-//Take this component's generetaed HTML and put it in the page. ( DOM )
-ReactDOM.render(<App />, document.querySelector('.container'));
+
+// 2- Take this component's generated HTML and put it on the page (in the DOM)
+// ReactDom use to work with DOM
+ReactDom.render(<App/>, document.querySelector('.root') );
