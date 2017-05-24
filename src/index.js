@@ -3,13 +3,14 @@ import ReactDom from 'react-dom';
 import YTSearch from 'youtube-api-search';
 
 import SearchBar from './components/search_bar';
+import VideoList from './components/video_list';
 
 const API_KEY='AIzaSyAqp4OmEviFz8RWiKzT05v85-46FkxdfZE'
 
 // 1- Create a new class base component. This component should produce some HTML.
 class App extends Component {
-  constructor(probs) {
-    super(probs);
+  constructor(props) {
+    super(props);
 
     this.state = { videos: [] };
 
@@ -21,10 +22,13 @@ class App extends Component {
     })
   }
 
+  // passing data from parent component(App) to child component(VideoList)
+  // it will send the data from parent to child usinf "props"
   render() {
     return (
       <div>
         <SearchBar />
+        <VideoList videos={this.state.videos}/>
       </div>
     );
   }
