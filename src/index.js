@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 // 1- Create a new component. This component should produce some HTML.
-const App = function() {
+const App = () => {
   return <div>Hi!</div>;
   // <div>Hi!</div>: This is JSX, it's looks like HTMl but it's JavaScript
   // the main reason of using JSX is to make our component cleaner
