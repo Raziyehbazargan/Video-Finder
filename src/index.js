@@ -11,17 +11,16 @@ const App = () => {
     </div>
   );
 }
-  // <div>Hi!</div>: This is JSX, it's looks like HTMl but it's JavaScript
-  // the main reason of using JSX is to make our component cleaner
-  // for example this line in JSX is equal as below code in vanilla JavaScript
-  /*
-   return React.createElement(
-    "div",
-    "",
-    null
-  )
-  */
-
+// <div>Hi!</div>: This is JSX, it's looks like HTMl but it's JavaScript
+// the main reason of using JSX is to make our component cleaner
+// for example this line in JSX is equal as below code in vanilla JavaScript
+/*
+ return React.createElement(
+  "div",
+  "",
+  null
+)
+*/
 
 
 // 2- Take this component's generated HTML and put it on the page (in the DOM)
