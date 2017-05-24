@@ -13,13 +13,16 @@ class App extends Component {
 
     this.state = { videos: [] };
 
-    YTSearch({ key: API_KEY, term: 'surfboards' }, function(data) {
-      console.log(data);
+    YTSearch({ key: API_KEY, term: 'surfboards' }, (videos) => {
+      //console.log(data);
+      //ES6 : if a key and peoprty have the same name we can refactor the code:
+      //this.setState( {videos: videos });
+      this.setState({ videos });
     })
   }
-  
+
   render() {
-    (
+    return (
       <div>
         <SearchBar />
       </div>
