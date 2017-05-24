@@ -17,6 +17,5 @@ const App = () => {
 
 
 // 2- Take this component's generated HTML and put it on the page (in the DOM)
-
 // ReactDom use to work with DOM
 ReactDom.render(<App/>, document.querySelector('.root') );
