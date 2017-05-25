@@ -6,15 +6,16 @@ import React from 'react';
 // }
 
 //Es6 synatx
-const VideoListItem = ({video}) => {
+const VideoListItem = ({video, onVideoSelect}) => {
   //const video = props.video; using ({video}) is equal this line
+  //const onVideoSelect = props.onVideoSelect;
+
   console.log(video); // check data in console
   const imageURL = video.snippet.thumbnails.default.url;
-  console.log(imageURL);
   // this is response come from youtube-api call
 
   return (
-    <li className="listgroup-item">
+    <li onClick={() => onVideoSelect(video)} className="list-group-item">
       <div className="video-list media">
         <div className="media-left">
           <img className="media-object" src={imageURL}/>
