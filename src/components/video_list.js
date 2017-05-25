@@ -1,9 +1,11 @@
 import React from 'react';
+import VideoListItem from './video_list_item';
 
 // child Component has access to property of child use "props" :props.videos
 const VideoList = (props) => {
-  const videoItems = props.video.map(video => {
-    return <VideoListItem video={video} />
+  const videoItems = props.videos.map(video => {
+    //when we have multiple child using map or array we need to specify a unique key for each child element
+    return <VideoListItem key={video.etag} video={video} />
   });
 
   return (
