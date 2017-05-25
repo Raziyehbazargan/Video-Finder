@@ -26,8 +26,8 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="row">
-        <input type="text"
+      <div className="col-md-8 form-group">
+        <input className="form-control"
           value={this.state.term}
           onChange={ event => this.setState({ term: event.target.value })} />
       </div>
