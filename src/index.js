@@ -17,23 +17,27 @@ class App extends Component {
       selectedVideo: null
     };
 
-    YTSearch({ key: API_KEY, term: 'surfboards' }, (videos) => {
-      //console.log(data);
-      //ES6 : if a key and peoprty have the same name we can refactor the code:
-      //this.setState( {videos: videos });
-      this.setState({
-        videos: videos,
-        selectedVideo: videos[0]
-      });
-    })
-  }
+      this.videoSearch('surfboards');
+    }
+
+    videoSearch(userInput) {
+      YTSearch({ key: API_KEY, term: userInput }, (videos) => {
+        //console.log(data);
+        //ES6 : if a key and peoprty have the same name we can refactor the code:
+        //this.setState( {videos: videos });
+        this.setState({
+          videos: videos,
+          selectedVideo: videos[0]
+        });
+      })
+    }
 
   // passing data from parent component(App) to child component(VideoList)
   // it will send the data from parent to child usinf "props"
   render() {
     return (
       <div>
-        <SearchBar />
+        <SearchBar onSearchUserInputChange={userInput => this.videoSearch(userInput)}/>
         <VideoDetail video={this.state.selectedVideo}/>
         <VideoList
           onVideoSelect={selectedVideo => this.setState({selectedVideo})}
