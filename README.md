@@ -1,6 +1,6 @@
 ## ReduxSimpleStarter
 
-##Getting Started##
+##Getting Started---> ##
 
 There are two methods for getting started with this repo.
 
@@ -21,5 +21,8 @@ Click [here](https://github.com/StephenGrider/ReactStarter/releases) then downlo
 	> npm install
 	> npm start
 	> 
+
 	
 ```
+
+
