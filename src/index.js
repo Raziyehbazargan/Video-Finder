@@ -1,7 +1,7 @@
+import _ from 'lodash';
 import React, {Component} from 'react';
 import ReactDom from 'react-dom';
 import YTSearch from 'youtube-api-search';
-
 import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
@@ -17,7 +17,7 @@ class App extends Component {
       selectedVideo: null
     };
 
-      this.videoSearch('surfboards');
+      this.videoSearch('persian foods');
     }
 
     videoSearch(userInput) {
@@ -35,9 +35,11 @@ class App extends Component {
   // passing data from parent component(App) to child component(VideoList)
   // it will send the data from parent to child usinf "props"
   render() {
+    const videoSearch = _.devounce((term) => {this.videoSearch(term)}, 500);
+
     return (
       <div>
-        <SearchBar onSearchUserInputChange={userInput => this.videoSearch(userInput)}/>
+        <SearchBar onSearchUserInputChange={videoSearch}/>
         <VideoDetail video={this.state.selectedVideo}/>
         <VideoList
           onVideoSelect={selectedVideo => this.setState({selectedVideo})}
