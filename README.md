@@ -6,7 +6,6 @@
 ```
 	> npm install
 	> npm start
-	
 ```
 
 
